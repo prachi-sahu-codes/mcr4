@@ -1,5 +1,11 @@
 import React from "react";
-import { BsBookmark, BsFillBookmarkFill, BsShare } from "react-icons/bs";
+import {
+  BsBookmark,
+  BsFillBookmarkFill,
+  BsShare,
+  BsArrowUpCircle,
+  BsArrowDownCircle,
+} from "react-icons/bs";
 import { BiCommentDetail } from "react-icons/bi";
 import { AiOutlineHeart } from "react-icons/ai";
 
@@ -21,13 +27,13 @@ export const Card = ({ item, noDetail }) => {
           <div
             onClick={() => dispatch({ type: "UPVOTE", payload: item.postId })}
           >
-            up
+            <BsArrowUpCircle />
           </div>
           <div>{calcVotes(item.upvotes, item.downvotes)}</div>
           <div
             onClick={() => dispatch({ type: "DOWNVOTE", payload: item.postId })}
           >
-            down
+            <BsArrowDownCircle />
           </div>
         </div>
         <div>

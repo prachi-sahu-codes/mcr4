@@ -83,7 +83,11 @@
 }
 
 .vote-box {
-  padding-right: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-right: 2rem;
+  text-align: center;
 }
 
 .tags {
