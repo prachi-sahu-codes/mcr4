@@ -56,13 +56,13 @@
 
 .main-content {
   padding: 0 1rem;
-  width: calc(100vw - 450px);
+  width: calc(100vw - 510px);
   height: calc(100vh - 70px);
   overflow-y: scroll;
 }
 
 .sort-bar {
-  width: 200px;
+  width: 250px;
 }
 
 .postcard {
@@ -120,4 +120,10 @@
   display: block;
   padding: 1rem 1rem 0;
   font-size: 1.5rem;
+}
+
+.select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 2rem;
 }

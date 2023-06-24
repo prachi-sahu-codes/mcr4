@@ -5,7 +5,7 @@ export const SortBar = () => {
   const { dispatch } = useData();
   return (
     <div className="sort-bar">
-      <select
+      <select className="select"
         onChange={(e) => dispatch({ type: "SORT", payload: e.target.value })}
       >
         <option value={""} disabled>

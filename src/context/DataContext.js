@@ -38,7 +38,7 @@ export const DataProvider = ({ children }) => {
           const newSortedData = [...state.sortedData].sort(
             (a, b) => getOnlyMin(b.createdAt) - getOnlyMin(a.createdAt)
           );
-          console.log(newSortedData);
+
           return {
             ...state,
             sortedData: newSortedData,
@@ -48,7 +48,7 @@ export const DataProvider = ({ children }) => {
           const newSortedData = state.sortedData.sort(
             (a, b) => b.upvotes - b.downvotes - (a.upvotes - a.downvotes)
           );
-          console.log(newSortedData);
+
           return {
             ...state,
             sortedData: newSortedData,
