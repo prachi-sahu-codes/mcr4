@@ -20,6 +20,7 @@ export const DataProvider = ({ children }) => {
 
   const reducerFunction = (state, action) => {
     switch (action.type) {
+      case "LATEST_SORT":
       case "SORT":
         if (action.payload === state.sortBy) {
           const newSortedData = [...state.sortedData].sort(

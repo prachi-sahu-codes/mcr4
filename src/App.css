@@ -111,3 +111,9 @@
 .list-post {
   list-style: none;
 }
+
+.goback {
+  display: block;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
