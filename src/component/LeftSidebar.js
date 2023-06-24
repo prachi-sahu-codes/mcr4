@@ -30,10 +30,10 @@ export const LeftSidebar = () => {
         Profile
       </NavLink>
       <div className="flex account-info">
-        <img src={state.data.picUrl} alt="avatar" className="post-avatar" />
+        <img src={state.data.picUrl} alt="avatar" className="user-avatar" />
         <div>
-          <div>{state.data.name}</div>
-          <div>@{state.data.username}</div>
+          <h4>{state.data.name}</h4>
+          <p>@{state.data.username}</p>
         </div>
       </div>
     </div>

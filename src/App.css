@@ -54,6 +54,12 @@
   border-radius: 50%;
 }
 
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
 .main-content {
   padding: 0 1rem;
   width: calc(100vw - 510px);
@@ -130,6 +136,6 @@
 
 .account-info {
   position: absolute;
-  bottom: 0;
-  left: 1rem;
+  bottom: 1rem;
+  left: 2rem;
 }
