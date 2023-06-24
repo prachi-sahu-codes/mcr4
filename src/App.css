@@ -1,38 +1,95 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: #181818;
+}
+
 .App {
-  text-align: center;
+  user-select: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.flex {
+  display: flex;
+  gap: 0.8rem;
+  align-items: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main-area {
+  display: flex;
+  height: calc(100vh - 70px);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.sidebar {
+  width: 200px;
+  padding: 1rem 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: calc(100vh - 70px);
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.navigation {
+  padding: 0 2rem;
+  box-shadow: 0 2px 5px rgb(207, 207, 207);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.app-title {
+  font-size: 1.3rem;
+  padding: 1.2rem;
+  text-decoration: none;
+  font-weight: 700;
+  color: blueviolet;
+}
+
+.links {
+  font-weight: 400;
+  color: #181818;
+}
+
+.post-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.main-content {
+  padding: 0 1rem;
+  width: calc(100vw - 400px);
+  height: calc(100vh - 70px);
+  overflow-y: scroll;
+}
+
+.sort-bar {
+  width: 200px;
+}
+
+.postcard {
+  display: flex;
+  max-width: 610px;
+  list-style: none;
+  padding: 1rem 2rem;
+  margin: 3rem auto;
+  box-shadow: 0 2px 5px rgb(218, 218, 218);
+}
+
+.vote-box {
+  padding-right: 1rem;
+}
+
+.tags {
+  padding: 2px 15px;
+  margin-right: 0.5rem;
+  background-color: #892be251;
+  border-radius: 6px;
+}
+
+.post-head,
+.post-content {
+  padding: 0.8rem 0;
+}
+
+.card-action {
+  display: flex;
+  justify-content: space-between;
 }

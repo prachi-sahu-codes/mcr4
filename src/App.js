@@ -1,9 +1,24 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import { LeftSidebar } from "./component/LeftSidebar";
+import { Home } from "./pages/home/Home";
+import { PostDetail } from "./pages/postDetail/PostDetail";
+import { SortBar } from "./component/SortBar";
 
 function App() {
   return (
     <div className="App">
-      <h1>hELLO</h1>
+      <nav className="navigation">
+        <div className="app-title">MyForum</div>
+      </nav>
+      <div className="main-area">
+        <LeftSidebar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/post/:postId" element={<PostDetail />} />
+        </Routes>
+        <SortBar />
+      </div>
     </div>
   );
 }
