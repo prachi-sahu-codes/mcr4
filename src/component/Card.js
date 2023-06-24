@@ -55,10 +55,10 @@ export const Card = ({ item, noDetail }) => {
           <p className="post-content">{item.postDescription}</p>
           <hr />
           <div className="card-action">
-            <div>
+            <div onClick={() => navigate(`/posts/${item.postId}`)}>
               <BiCommentDetail />
             </div>
-            <div onClick={() => navigate(`/posts/${item.postId}`)}>
+            <div>
               <BsShare />
             </div>
             <div
