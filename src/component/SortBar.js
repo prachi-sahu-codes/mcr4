@@ -2,10 +2,12 @@ import React from "react";
 import { useData } from "../context/DataContext";
 
 export const SortBar = () => {
-  const { dispatch } = useData();
+  const { state, dispatch } = useData();
   return (
     <div className="sort-bar">
-      <select className="select"
+      <select
+        className="select"
+        value={state.sortBy}
         onChange={(e) => dispatch({ type: "SORT", payload: e.target.value })}
       >
         <option value={""} disabled>
