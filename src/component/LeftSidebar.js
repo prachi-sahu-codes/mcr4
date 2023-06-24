@@ -11,7 +11,7 @@ const getActiveStyle = ({ isActive }) => ({
 });
 
 export const LeftSidebar = () => {
-  const { state, getTime } = useData();
+  const { state } = useData();
   return (
     <div className="sidebar">
       <NavLink to="/" className="app-title flex" style={getActiveStyle}>
