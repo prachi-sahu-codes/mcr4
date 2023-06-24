@@ -15,7 +15,7 @@ function App() {
         <LeftSidebar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/post/:postId" element={<PostDetail />} />
+          <Route path="/posts/:postId" element={<PostDetail />} />
         </Routes>
         <SortBar />
       </div>

@@ -21,21 +21,62 @@ export const DataProvider = ({ children }) => {
   const reducerFunction = (state, action) => {
     switch (action.type) {
       case "SORT":
-        if (action.payload === "latest") {
-          const sortedData = state.data.posts.sort(
+        if (action.payload === state.sortBy) {
+          const newSortedData = [...state.sortedData].sort(
             (a, b) => getTime(a.createdAt) - getTime(b.createdAt)
           );
-
-          return { ...state, data: sortedData, sortBy: action.payload };
-        } else if (action.payload === "upvote") {
-          const sortedData = state.data.posts.sort(
+          console.log(newSortedData);
+          return {
+            ...state,
+            sortedData: newSortedData,
+            sortBy: action.payload,
+          };
+        } else if (action.payload === state.sortBy) {
+          const newSortedData = state.sortedData.sort(
             (a, b) => b.upvotes - b.downvotes - (a.upvotes - a.downvotes)
           );
 
-          return { ...state, data: sortedData, sortBy: action.payload };
+          return {
+            ...state,
+            sortedData: newSortedData,
+            sortBy: action.payload,
+          };
         } else {
           return state;
         }
+
+      case "UPVOTE":
+        const newUpvoteData = state.sortedData.map((post) =>
+          post.postId === action.payload
+            ? { ...post, upvotes: post.upvotes + 1 }
+            : post
+        );
+
+        return {
+          ...state,
+          sortedData: newUpvoteData,
+        };
+      case "DOWNVOTE":
+        const newDownvoteData = state.sortedData.map((post) =>
+          post.postId === action.payload
+            ? {
+                ...post,
+                downvotes: post.downvotes + 1,
+              }
+            : post
+        );
+        return {
+          ...state,
+          sortedData: newDownvoteData,
+        };
+
+      case "BOOKMARK":
+        const bookmarkData = state.sortedData.map((post) =>
+          post.postId === action.payload
+            ? { ...post, isBookmarked: !post.isBookmarked }
+            : post
+        );
+        return { ...state, sortedData: bookmarkData };
 
       default:
         console.log("Something is wrong");
@@ -45,7 +86,8 @@ export const DataProvider = ({ children }) => {
 
   const [state, dispatch] = useReducer(reducerFunction, {
     data: forumData,
-    sortBy: "latest",
+    sortedData: forumData.posts,
+    sortBy: "",
   });
   return (
     <DataContext.Provider value={{ state, dispatch, getTime }}>

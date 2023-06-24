@@ -8,6 +8,9 @@ export const SortBar = () => {
       <select
         onChange={(e) => dispatch({ type: "SORT", payload: e.target.value })}
       >
+        <option value={""} disabled>
+          Select Sort Options...
+        </option>
         <option value={"latest"}>Latest</option>
         <option value={"upvote"}>Most upvote</option>
       </select>
